@@ -1,0 +1,98 @@
+<?php
+// Base class: Person (common attributes for all)
+class Person {
+    // Attributes
+    public $name;
+    public $age;
+    public $gender;
+
+    // Constructor
+    public function __construct($name, $age, $gender) {
+        $this->name = $name;
+        $this->age = $age;
+        $this->gender = $gender;
+    }
+
+    // Methods
+    public function introduce() {
+        return "Hi, I am $this->name, $this->age years old.";
+    }
+}
+
+// Class: Student
+class Student extends Person {
+    public $studentID;
+    public $course;
+
+    public function __construct($name, $age, $gender, $studentID, $course) {
+        parent::__construct($name, $age, $gender);
+        $this->studentID = $studentID;
+        $this->course = $course;
+    }
+
+    public function study() {
+        return "$this->name is studying $this->course.";
+    }
+}
+
+// Class: Employee
+class Employee extends Person {
+    public $employeeID;
+    public $position;
+
+    public function __construct($name, $age, $gender, $employeeID, $position) {
+        parent::__construct($name, $age, $gender);
+        $this->employeeID = $employeeID;
+        $this->position = $position;
+    }
+
+    public function work() {
+        return "$this->name is working as $this->position.";
+    }
+}
+
+// Class: Family
+class Family extends Person {
+    public $relation;
+
+    public function __construct($name, $age, $gender, $relation) {
+        parent::__construct($name, $age, $gender);
+        $this->relation = $relation;
+    }
+
+    public function familyRole() {
+        return "$this->name is a $this->relation in the family.";
+    }
+}
+
+// Class: Government Official
+class GovernmentOfficial extends Person {
+    public $position;
+    public $department;
+
+    public function __construct($name, $age, $gender, $position, $department) {
+        parent::__construct($name, $age, $gender);
+        $this->position = $position;
+        $this->department = $department;
+    }
+
+    public function serve() {
+        return "$this->name serves as $this->position in $this->department.";
+    }
+}
+
+// Class: Celebrity
+class Celebrity extends Person {
+    public $profession;
+    public $famousFor;
+
+    public function __construct($name, $age, $gender, $profession, $famousFor) {
+        parent::__construct($name, $age, $gender);
+        $this->profession = $profession;
+        $this->famousFor = $famousFor;
+    }
+
+    public function perform() {
+        return "$this->name is a famous $this->profession known for $this->famousFor.";
+    }
+}
