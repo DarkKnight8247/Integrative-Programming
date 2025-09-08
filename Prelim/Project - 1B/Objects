@@ -1,0 +1,32 @@
+<?php
+include_once 'activity.php';
+
+echo "Person: <br>";
+$person1 = new Person("Franz G. Castor", "10", "Male");
+echo $person1->introduce()  . "<br><br>";
+
+echo "Student: <br>";
+$person2 = new Student("Shanyl S. Sapatan", "20", "Female", "12-1233", "BSIT");
+echo $person2->introduce()  . "<br>";
+echo $person2->study() . "<br><br>";
+
+echo "Employee: <br>";
+$person3 = new Employee("Kent Lawrence", "30", "Male", "123456789", "Manager");
+echo $person3->introduce()  . "<br>";
+echo $person3->work() . "<br><br>";
+
+echo "Family: <br>";
+$person4 = new Family("Marrielle Zabala", "60", "Female", "Mother");
+echo $person4->introduce()  . "<br>";
+echo $person4->familyRole() . "<br><br>";
+
+echo "Government Official: <br>";
+$person5 = new GovernmentOfficial("John Kenth Bornea", "5", "Male", "President", "Pres");
+echo $person5->introduce()  . "<br>";
+echo $person5->serve() . "<br><br>";
+
+echo "Celebrity: <br>";
+$person6 = new Celebrity("Princess Mea", "60", "Female", "Actor", "Vlogging");
+echo $person6->introduce()  . "<br>";
+echo $person6->perform(); 
+?>
