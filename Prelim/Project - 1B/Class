@@ -1,25 +1,20 @@
 <?php
-// Base class: Person (common attributes for all)
 class Person {
-    // Attributes
     public $name;
     public $age;
     public $gender;
 
-    // Constructor
     public function __construct($name, $age, $gender) {
         $this->name = $name;
         $this->age = $age;
         $this->gender = $gender;
     }
 
-    // Methods
     public function introduce() {
         return "Hi, I am $this->name, $this->age years old.";
     }
 }
 
-// Class: Student
 class Student extends Person {
     public $studentID;
     public $course;
@@ -35,7 +30,6 @@ class Student extends Person {
     }
 }
 
-// Class: Employee
 class Employee extends Person {
     public $employeeID;
     public $position;
@@ -51,7 +45,6 @@ class Employee extends Person {
     }
 }
 
-// Class: Family
 class Family extends Person {
     public $relation;
 
@@ -65,7 +58,6 @@ class Family extends Person {
     }
 }
 
-// Class: Government Official
 class GovernmentOfficial extends Person {
     public $position;
     public $department;
@@ -81,7 +73,6 @@ class GovernmentOfficial extends Person {
     }
 }
 
-// Class: Celebrity
 class Celebrity extends Person {
     public $profession;
     public $famousFor;
