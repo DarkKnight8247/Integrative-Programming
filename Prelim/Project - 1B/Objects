@@ -1,4 +1,4 @@
-<?php
+<?php 
 include_once 'activity.php';
 
 echo "Person: <br>";
