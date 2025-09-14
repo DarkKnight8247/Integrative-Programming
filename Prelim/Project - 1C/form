@@ -1,0 +1,75 @@
+<form method="post">
+    <h3>Basic Information</h3>
+    Fullname: <input type="text" name="name" required><br>
+    Course: <input type="text" name="course" required><br>
+    Level: <input type="number" name="level" required><br>
+    Status: 
+    <select name="status" required>
+        <option value="regular">Regular</option>
+        <option value="irregular">Irregular</option>
+    </select>
+    <br><br>
+
+    <h3>For Scholars</h3>
+    Scholarship Program: <input type="text" name="program"><br>
+    Scholarship Type: <input type="text" name="type"><br><br>
+
+    <h3>For Student Council</h3>
+    Position: <input type="text" name="position"> <br>
+    Organization: <input type="text" name="org"> <br><br>
+
+    <h3>For Working Students</h3>
+    Job Title: <input type="text" name="job"> <br>
+    Company: <input type="text" name="company"> <br><br>
+    
+    <input type="submit" name="submit" value="Enroll Student"><br><br>
+</form>
+
+<?php
+require 'class.php';
+
+if (isset($_POST['submit'])) {
+    $name = $_POST['name'];
+    $course = $_POST['course'];
+    $level = $_POST['level'];
+    $status = $_POST['status'];
+
+    $scholarshipProgram = $_POST['program'];
+    $scholarshipType = $_POST['type'];
+    $position = $_POST['position'];
+    $organization = $_POST['org'];
+    $jobTitle = $_POST['job'];
+    $company = $_POST['company'];
+
+    if (empty($scholarshipProgram) && empty($position) && empty($jobTitle)) {
+        $response = new Student($name, $course, $level, $status);
+
+    } elseif (!empty($scholarshipProgram) && empty($position) && empty($jobTitle)) {
+        $response = new StudentScholar($name, $course, $level, $status, $scholarshipProgram, $scholarshipType);
+
+    } elseif (empty($scholarshipProgram) && !empty($position) && empty($jobTitle)) {
+        $response = new StudentCouncil($name, $course, $level, $status, $position, $organization);
+
+    } elseif (!empty($scholarshipProgram) && !empty($position) && empty($jobTitle)) {
+        $response = new StudentCouncilScholar($name, $course, $level, $status, $position, $organization, $scholarshipProgram, $scholarshipType);
+
+    } elseif (empty($scholarshipProgram) && empty($position) && !empty($jobTitle)) {
+        $response = new WorkingStudent($name, $course, $level, $status, $jobTitle, $company);
+
+    } elseif (empty($scholarshipProgram) && !empty($position) && !empty($jobTitle)) {
+        $response = new WorkingCouncilStudent($name, $course, $level, $status, $position, $organization, $jobTitle, $company);
+
+    } elseif (!empty($scholarshipProgram) && empty($position) && !empty($jobTitle)) {
+        $response = new WorkingScholarStudent($name, $course, $level, $status, $scholarshipProgram, $scholarshipType, $jobTitle, $company);
+
+    } elseif (!empty($scholarshipProgram) && !empty($position) && !empty($jobTitle)) {
+        $response = new WorkingCouncilScholarStudent($name, $course, $level, $status, $position, $organization, $scholarshipProgram, $scholarshipType, $jobTitle, $company);
+
+    } else {
+        echo "Invalid data input.";
+        exit;
+    }
+
+    echo $response->enrollment();
+}
+?>
