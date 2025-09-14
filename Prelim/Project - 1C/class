@@ -1,0 +1,155 @@
+<?php
+interface Enrollment{
+    public function enrollment();
+}
+
+class Student implements Enrollment{
+    public $fullname;
+    public $course;
+    public $level;
+    public $status;
+  
+    public function __construct($fullname, $course, $level, $status){
+        $this->fullname = $fullname;
+        $this->course = $course;
+        $this->level = $level;
+        $this->status = $status;
+    }
+    public function introduction(){
+        return "I am $this->fullname a $this->level $this->course student.";
+    }
+    public function enrollment(){
+        return "You have been enrolled as a $this->status student.";
+    }
+}
+
+class StudentCouncil extends Student implements Enrollment{
+    public $position;
+    public $organization;
+
+    public function __construct($fullname, $course, $level, $status, $position, $organization){
+        parent::__construct($fullname, $course, $level, $status);
+        $this->position = $position;
+        $this->organization = $organization;
+    }
+
+    public function intro2(){
+        return "A current $this->course $this->level $this->organization $this->position.";
+    }
+    public function enrollment(){
+        return "You have been enrolled as a $this->status student and as $this->organization $this->position.";
+    }
+}
+
+class StudentScholar extends Student implements Enrollment{
+    public $scholarshipProgram;
+    public $scholarshipType;
+
+    public function __construct($fullname, $course, $level, $status, $scholarshipProgram, $scholarshipType){
+        parent::__construct($fullname, $course, $level, $status);
+        $this->scholarshipProgram = $scholarshipProgram;
+        $this->scholarshipType = $scholarshipType;
+    }
+    public function intro3(){
+        return "A $this->scholarshipProgram $this->scholarshipType student.";
+    }
+    public function enrollment(){
+        return "You have been enrolled as a $this->status student with $this->scholarshipProgram $this->scholarshipType.";
+    }
+}
+
+class WorkingStudent extends Student implements Enrollment {
+    public $jobTitle;
+    public $company;
+
+    public function __construct($fullname, $course, $level, $status, $jobTitle, $company){
+        parent::__construct($fullname, $course, $level, $status);
+        $this->jobTitle = $jobTitle;
+        $this->company = $company;
+    }
+
+    public function enrollment(){
+        return "You have been enrolled as a $this->status student while working as a $this->jobTitle at $this->company.";
+    }
+}
+
+class WorkingCouncilStudent extends Student implements Enrollment {
+    public $position;
+    public $organization;
+    public $jobTitle;
+    public $company;
+
+    public function __construct($fullname, $course, $level, $status, $position, $organization, $jobTitle, $company){
+        parent::__construct($fullname, $course, $level, $status);
+        $this->position = $position;
+        $this->organization = $organization;
+        $this->jobTitle = $jobTitle;
+        $this->company = $company;
+    }
+
+    public function enrollment(){
+        return "You have been enrolled as a $this->status student, serving as $this->organization $this->position, while working as a $this->jobTitle at $this->company.";
+    }
+}
+
+class WorkingScholarStudent extends Student implements Enrollment {
+    public $scholarshipProgram;
+    public $scholarshipType;
+    public $jobTitle;
+    public $company;
+
+    public function __construct($fullname, $course, $level, $status, $scholarshipProgram, $scholarshipType, $jobTitle, $company){
+        parent::__construct($fullname, $course, $level, $status);
+        $this->scholarshipProgram = $scholarshipProgram;
+        $this->scholarshipType = $scholarshipType;
+        $this->jobTitle = $jobTitle;
+        $this->company = $company;
+    }
+
+    public function enrollment(){
+        return "You have been enrolled as a $this->status student with $this->scholarshipProgram $this->scholarshipType, while working as a $this->jobTitle at $this->company.";
+    }
+}
+
+class WorkingCouncilScholarStudent extends Student implements Enrollment {
+    public $position;
+    public $organization;
+    public $scholarshipProgram;
+    public $scholarshipType;
+    public $jobTitle;
+    public $company;
+
+    public function __construct($fullname, $course, $level, $status, $position, $organization, $scholarshipProgram, $scholarshipType, $jobTitle, $company){
+        parent::__construct($fullname, $course, $level, $status);
+        $this->position = $position;
+        $this->organization = $organization;
+        $this->scholarshipProgram = $scholarshipProgram;
+        $this->scholarshipType = $scholarshipType;
+        $this->jobTitle = $jobTitle;
+        $this->company = $company;
+    }
+
+    public function enrollment(){
+        return "You have been enrolled as a $this->status student, serving as $this->organization $this->position, with $this->scholarshipProgram $this->scholarshipType, while working as a $this->jobTitle at $this->company.";
+    }
+}
+
+class StudentCouncilScholar extends Student implements Enrollment {
+    public $position;
+    public $organization;
+    public $scholarshipProgram;
+    public $scholarshipType;
+
+    public function __construct($fullname, $course, $level, $status, $position, $organization, $scholarshipProgram, $scholarshipType){
+        parent::__construct($fullname, $course, $level, $status);
+        $this->position = $position;
+        $this->organization = $organization;
+        $this->scholarshipProgram = $scholarshipProgram;
+        $this->scholarshipType = $scholarshipType;
+    }
+
+    public function enrollment(){
+        return "You have been enrolled as a $this->status $this->course student, serving as $this->organization $this->position, with $this->scholarshipProgram $this->scholarshipType.";
+    }
+}
+?>
