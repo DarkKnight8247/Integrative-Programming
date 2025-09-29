@@ -1,0 +1,53 @@
+<h1>Library Borrowing System</h1><br>
+<form method="post">
+    <strong>Library Item Form</strong><br>
+    <input type="text" name="title" placeholder="Title"><br>
+    <input type="text" name="author" placeholder="Author"><br>
+    <input type="number" name="year" placeholder="Year Published"><br>
+    <input type="number" name="days" placeholder="Borrow Days"><br>
+
+    <strong>Item Type:</strong> 
+    <select name="type">
+        <option value="">- Select Type -</option>
+        <option value="book">Book</option>
+        <option value="magazine">Magazine</option>
+    </select> <br><br>
+
+    <strong>For Books</strong><br>
+    <input type="text" name="isbn" placeholder="ISBN"><br><br>
+
+    <strong>For Magazines</strong><br>
+    <input type="text" name="issueNumber" placeholder="Issue Number"><br><br>
+
+    <input type="submit" name="submit"><br><br>
+</form>
+
+<?php
+require 'prelimExam2.php';
+
+if (isset($_POST['submit'])) {
+    $title = $_POST['title'];
+    $author = $_POST['author'];
+    $year = $_POST['year'];
+    $type = $_POST['type'];
+    $isbn = $_POST['isbn'];
+    $issueNumber = $_POST['issueNumber'];
+    $days = $_POST['days'];
+
+    if (!empty($title) && !empty($author) && !empty($year) && !empty($type) && !empty($days)) {
+        if ($type === "book" && !empty($isbn)) {
+            $item = new Book($title, $author, $year, $isbn);
+        } elseif ($type === "magazine" && !empty($issueNumber)) {
+            $item = new Magazine($title, $author, $year, $issueNumber);
+        } else {
+            echo "Invalid input for selected type!";
+            exit;
+        }
+
+        $item->displayDetails();
+        $item->borrowItem($days);
+    } else {
+        echo "Please fill in all required fields!";
+    }
+}
+?>
