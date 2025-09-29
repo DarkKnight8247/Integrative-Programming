@@ -1,0 +1,55 @@
+<form method="post">
+    <strong>Form</strong><br>
+    <input type="text" name="name" placeholder="Fullname"><br>
+    <input type="text" name="age" placeholder="Age"><br>
+
+    <strong>Status:</strong> 
+    <select name="status">
+        <option value="">- Student Type -</option>
+        <option value="student">Student</option>
+        <option value="staff">Staff</option>
+    </select> <br><br>
+
+    <strong>For Students</strong><br>
+    <input type="number" name="SID" placeholder="Student ID"><br>
+    <input type="text" name="course" placeholder="Course"><br><br>
+
+    <strong>For Staff</strong><br>
+    <input type="number" name="EID" placeholder="Employee ID"><br>
+    <input type="text" name="specialization" placeholder="Specialization"><br><br>
+
+    <input type="number" name="score" placeholder="Score"><br><br>
+
+    <input type="submit" name="submit"><br><br>
+</form>
+
+<?php
+require 'prelimExam1.php';
+
+if (isset($_POST['submit'])) {
+    $name = $_POST['name'];
+    $age = $_POST['age'];
+    $status = $_POST['status'];
+    $SID = $_POST['SID'];
+    $course = $_POST['course'];
+    $EID = $_POST['EID'];
+    $specialization = $_POST['specialization'];
+    $score = $_POST['score'];
+
+    if (!empty($name) && !empty($age) && !empty($score)
+    && (($status === "student" && !empty($SID) && !empty($course)) 
+    || ($status === "staff" && !empty($EID) && !empty($specialization)))) {
+
+    if ($status === "student") {
+        $profile = new Student($name, $age, $SID, $course);
+    } elseif ($status === "staff") {
+        $profile = new Teacher($name, $age, $EID, $specialization);
+    }
+
+    echo $profile->displayInfo();
+    echo $profile->evaluatePerformance($score) . "<br>";
+    } else {
+    echo "Invalid data input!";
+    }
+}
+?>
