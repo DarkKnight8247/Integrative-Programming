@@ -1,7 +1,7 @@
 <?php 
 $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
 
-$hostIP = '192.168.0.2';
+$hostIP = '192.168.0.2'; //must be change according to your IP address yiz po ateh
 $port = 12345;
 
 $result = socket_bind($socket, $hostIP, $port);
