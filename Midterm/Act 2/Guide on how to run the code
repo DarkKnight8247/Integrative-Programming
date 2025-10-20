@@ -8,8 +8,8 @@ input: php -f (directory)
 e.g.
 php -f C:\xampp\htdocs\integ\m-a1\server.php
 
-then if it says "Waiting for connections..." you're all set to run your 
-client in to your browser!
+If it says "Waiting for connections..." you're all set to run your 
+client in your browser!
 
 If not then there must be a problem in your apache config.
 
@@ -20,7 +20,8 @@ How to fix?
 4 - Find and remove the semi colon of "extension=sockets"
 5 - Save
 
-If same dyapon ang prob, basin sa code mo na ang problema, e check lang
+If same dyapon ang prob, basin sa code mo na ang problema e check lang
+
 If indi pagid ma fix, way nako da idea kung pano na e kayohon BWAHAHHAH
 -------------------------------------------------------------------------
 ⚠️ AGAIN, REMINDERS ⚠️
