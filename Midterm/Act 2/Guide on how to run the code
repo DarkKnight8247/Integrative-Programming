@@ -1,4 +1,3 @@
-
 Wow gi basa ya omg I'm so proud!
 
 -------------------------------------------------------------------------
@@ -10,7 +9,18 @@ e.g.
 php -f C:\xampp\htdocs\integ\m-a1\server.php
 
 If it says "Waiting for connections..." you're all set to run your 
-client in your browser!
+client in to your browser!
+
+Konbaga ang process ka code is... sang pag run mo sang server sa cmd 
+pannel, ga reach out na sya pangita client kag reply. Tas kung ih run 
+mo naman si Client, automatic sa connect kag mag send out reply balik 
+sa server. Tas once ma recieve na sang server ang reply, e display ya 
+na dayun sa terminal.
+
+Paano ma check if nagana ang connection?
+Pag tapos mo run sang imo client simo browser, open mo balik imo cmd 
+pannel may ma gwa nada nga "This is from Client: Hello Server..." and 
+so on. If mag gwa ti congrats ih!
 
 If not then there must be a problem in your apache config.
 
@@ -21,10 +31,10 @@ How to fix?
 4 - Find and remove the semi colon of "extension=sockets"
 5 - Save
 
-If same dyapon ang prob, basin sa code mo na ang problema e check lang
-
+If same dyapon ang prob, basin sa code mo na ang problema, e check lang
 If indi pagid ma fix, way nako da idea kung pano na e kayohon BWAHAHHAH
 -------------------------------------------------------------------------
+
 ⚠️ AGAIN, REMINDERS ⚠️
 RUN YOUR SERVER IN YOUR TERMINAL/COMMAND PANNEL FIRST BEFORE RUNNING 
 YOUR CLIENT INTO YOUR BROWSER—OTHERWISE NO CONNECTION WILL OCCUR!
