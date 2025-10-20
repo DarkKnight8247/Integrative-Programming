@@ -1,0 +1,28 @@
+Wow gi basa ya omg I'm so proud!
+
+-------------------------------------------------------------------------
+Cge start
+E run danay imo server using command pannel/terminal
+input: php -f (directory)
+
+e.g.
+php -f C:\xampp\htdocs\integ\m-a1\server.php
+
+then if it says "Waiting for connections..." you're all set to run your 
+client in to your browser!
+
+If not then there must be a problem in your apache config.
+
+How to fix?
+1 - Open XXAMP
+2 - Configure APACHE module
+3 - Select "PHP (php.ini)"
+4 - Find and remove the semi colon of "extension=sockets"
+5 - Save
+
+If same dyapon ang prob, basin sa code mo na ang problema, e check lang
+If indi pagid ma fix, way nako da idea kung pano na e kayohon BWAHAHHAH
+-------------------------------------------------------------------------
+⚠️ AGAIN, REMINDERS ⚠️
+RUN YOUR SERVER IN YOUR TERMINAL/COMMAND PANNEL FIRST BEFORE RUNNING 
+YOUR CLIENT INTO YOUR BROWSER—OTHERWISE NO CONNECTION WILL OCCUR!
