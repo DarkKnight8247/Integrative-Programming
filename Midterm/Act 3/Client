@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Display (No Session)</title>
+</head>
+<body>
+  <?php
+  $messages = isset($_POST['messages']) ? $_POST['messages'] : '';
+
+  if (isset($_POST['reset'])) {
+    $messages = '';
+  }
+
+  if (isset($_POST['button']) && !empty(trim($_POST['message']))) {
+    $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+    $hostIP = '192.168.0.2';
+    $port = 44444;
+    $message = trim($_POST['message']);
+
+    if (@socket_connect($socket, $hostIP, $port)) {
+      socket_write($socket, $message, strlen($message));
+      $incoming = @socket_read($socket, 1024);
+      $messages .= "You: $message\n";
+      $messages .= "Server: $incoming\n";
+    } else {
+      $messages .= "Could not connect to server.\n";
+    }
+
+    socket_close($socket);
+  }
+  ?>
+
+  <form method="POST">
+    <label>Enter Message:</label>
+    <input type="text" name="message" autocomplete="off">
+    <input type="submit" name="button" value="Send">
+    <input type="submit" name="reset" value="Reset">
+
+    <textarea name="messages" hidden><?php echo htmlspecialchars($messages); ?></textarea>
+  </form>
+
+  <h3>Messages:</h3>
+  <div style="border:1px solid #ccc; padding:8px; width:400px; height:220px; overflow:auto; white-space:pre-wrap;">
+    <?php echo htmlspecialchars($messages ?: "No messages yet."); ?>
+  </div>
+</body>
+</html>
