@@ -1,0 +1,30 @@
+<?php
+// Create a TCP socket
+$serverSocket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+
+// Server IP and Port
+$serverIP = "127.0.0.1";  // localhost
+$serverPort = 12345;
+
+// Bind socket to the IP and port
+socket_bind($serverSocket, $serverIP, $serverPort);
+
+// Start listening for connections
+socket_listen($serverSocket, 3);
+echo "Waiting for connections...\n";
+
+// Accept a client connection
+$clientSocket = socket_accept($serverSocket);
+
+// Read message from client
+$clientMessage = socket_read($clientSocket, 1024);
+echo "From Client: " . $clientMessage . "\n";
+
+// Hardcoded reply from server
+$serverMessage = "Congrats CASTOR, you passed the Exam!";
+socket_write($clientSocket, $serverMessage, strlen($serverMessage));
+
+// Close sockets
+socket_close($clientSocket);
+socket_close($serverSocket);
+?>
