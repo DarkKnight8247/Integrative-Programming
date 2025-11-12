@@ -1,0 +1,24 @@
+<?php
+// Server details
+$serverIP = "127.0.0.1";  // localhost
+$serverPort = 12345;
+
+// Create socket
+$clientSocket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+
+// Connect to the server
+socket_connect($clientSocket, $serverIP, $serverPort);
+
+// Hardcoded message from client
+$clientMessage = "Congratulations CASTOR, you passed the Exam!";
+socket_write($clientSocket, $clientMessage, strlen($clientMessage));
+
+// Receive message from server
+$serverReply = socket_read($clientSocket, 1024);
+
+// Display output
+echo "From Server: " . $serverReply;
+
+// Close socket
+socket_close($clientSocket);
+?>
