@@ -1,0 +1,94 @@
+{
+    "student": {
+        "personalInformation": {
+            "name": {
+                "firstname": "Franz",
+                "middleInitial": "G.",
+                "surname": "Castor"
+            },
+
+            "birthdate": ["December", 25, 2005],
+            "age": 19,
+            "gender": "Male",
+            "nationality": "Filipino",
+            "civilStatus": "Single",
+
+            "homeAddress": {
+                "houseNumber": 1627,
+                "street": "Prk. Makawiwili",
+                "baranggay": "Mabini",
+                "city": "Cadiz",
+                "province": "Negros Occidental",
+                "zipCode": 6121,
+                "country": "Philippines"
+            },
+
+            "contactInfo": {
+                "cellNumber": "09774511697",
+                "emailAddress": "franz.castor25@gmail.com",
+
+                "emergencyContact": {
+                    "name": "Daryl B. Castor",
+                    "relationship": "Father",
+                    "contactNumber": "09039403849"
+                }
+            }
+        },
+
+        "education": {
+            "primary": {
+                "school": "Mabini Elementary School",
+                "schoolAddress": "Brgy. Mabini, Cadiz City",
+                "yearGraduated": 2018
+            },
+
+            "secondary": {
+                "school": "Mabini Farm School",
+                "schoolAddress": "Brgy. Mabini, Cadiz City",
+                "yearGraduated": 2024
+            },
+
+            "tertiary": {
+                "school": "State University of Northern Negros",
+                "schoolAddress": "Old Sagay, Sagay City",
+                "course": "Bachelor of Science in Information Technology",
+                "year": 2,
+                "section": "B",
+                "studentID": "24-2932",
+                "status": "Regular"
+            }
+        },
+
+        "hobbies": {
+            "hobby1": {
+                "activity": "Photography",
+                "frequency": "Daily",
+                "location": "Outdoors",
+                "duration": "2 hours per day"
+            },
+
+            "hobby2": {
+                "activity": "Drawing/Sketching",
+                "frequency": "Weekly",
+                "location": "Home",
+                "duration": "1–5 hours per artwork"
+            }
+        },
+
+        "skills": {
+            "technical": [
+                "Programming (PHP, JavaScript)",
+                "Web Development (HTML, CSS)",
+                "Photo Editing",
+                "Graphic Design",
+                "Video Editing"
+            ],
+
+            "soft": [
+                "Communication",
+                "Problem-Solving",
+                "Team Collaboration"
+            ]
+        }
+    }
+}
