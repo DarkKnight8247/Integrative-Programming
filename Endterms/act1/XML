@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<student>
+    <personalInformation>
+
+        <name>
+            <firstname>Franz</firstname>
+            <middleInitial>G.</middleInitial>
+            <surname>Castor</surname>
+        </name>
+
+        <birthdate>
+            <month>December</month>
+            <day>25</day>
+            <year>2005</year>
+        </birthdate>
+
+        <age>19</age>
+        <gender>Male</gender>
+        <nationality>Filipino</nationality>
+        <civilStatus>Single</civilStatus>
+
+        <homeAddress>
+            <houseNumber>1627</houseNumber>
+            <street>Prk. Makawiwili</street>
+            <baranggay>Mabini</baranggay>
+            <city>Cadiz</city>
+            <province>Negros Occidental</province>
+            <zipCode>6121</zipCode>
+            <country>Philippines</country>
+        </homeAddress>
+
+        <contactInfo>
+            <cellNumber>09774511697</cellNumber>
+            <emailAddress>franz.castor25@gmail.com</emailAddress>
+
+            <emergencyContact>
+                <name>Daryl B. Castor</name>
+                <relationship>Father</relationship>
+                <contactNumber>09039403849</contactNumber>
+            </emergencyContact>
+        </contactInfo>
+
+    </personalInformation>
+
+    <education>
+
+        <primary>
+            <school>Mabini Elementary School</school>
+            <schoolAddress>Brgy. Mabini, Cadiz City</schoolAddress>
+            <yearGraduated>2018</yearGraduated>
+        </primary>
+
+        <secondary>
+            <school>Mabini Farm School</school>
+            <schoolAddress>Brgy. Mabini, Cadiz City</schoolAddress>
+            <yearGraduated>2024</yearGraduated>
+        </secondary>
+
+        <tertiary>
+            <school>State University of Northern Negros</school>
+            <schoolAddress>Old Sagay, Sagay City</schoolAddress>
+            <course>Bachelor of Science in Information Technology</course>
+            <year>2</year>
+            <section>B</section>
+            <studentID>24-2932</studentID>
+            <status>Regular</status>
+        </tertiary>
+
+    </education>
+
+    <hobbies>
+
+        <hobby>
+            <activity>Photography</activity>
+            <frequency>Daily</frequency>
+            <location>Outdoors</location>
+            <duration>2 hours per day</duration>
+        </hobby>
+
+        <hobby>
+            <activity>Drawing/Sketching</activity>
+            <frequency>Weekly</frequency>
+            <location>Home</location>
+            <duration>1–5 hours per artwork</duration>
+        </hobby>
+
+    </hobbies>
+
+    <skills>
+
+        <technical>
+            <skill>Programming (PHP, JavaScript)</skill>
+            <skill>Web Development (HTML, CSS)</skill>
+            <skill>Photo Editing</skill>
+            <skill>Graphic Design</skill>
+            <skill>Video Editing</skill>
+        </technical>
+
+        <soft>
+            <skill>Communication</skill>
+            <skill>Problem-Solving</skill>
+            <skill>Team Collaboration</skill>
+        </soft>
+
+    </skills>
+</student>
