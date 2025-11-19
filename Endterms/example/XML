@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employee>
+    <faculty1>
+        <personalInformation>
+            <name>
+                <firstname>Juan</firstname>
+                <middleInitial>A.</middleInitial>
+                <surname>Dela Cruz</surname>
+            </name>
+
+            <birthdate>
+                <month>December</month>
+                <date>31</date>
+                <year>1900</year>
+            </birthdate>
+
+            <age>125</age>
+
+            <civilStatus>Single</civilStatus>
+
+        </personalInformation>
+
+        <professionalInformation>
+        
+        </professionalInformation>
+
+        <workInformation>
+        
+        </workInformation>
+    </faculty1>
+
+</employee>
