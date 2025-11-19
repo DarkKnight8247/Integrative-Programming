@@ -1,0 +1,52 @@
+{
+    "faculty": [
+        {
+            "personalInformation": {
+                "name":{
+                    "firstname": "Juan", 
+                    "middleInnitial": "Q.", 
+                    "surname": "Dela Cruz"},
+                    
+                "birthdate": [
+                    "December", 
+                    31, 
+                    1900],
+
+                "age": 18,
+
+                "civilStatus": "Single"
+            }
+        },
+
+        {
+            "professionalInfornation": {
+                "degree":{
+                    "bachelors":"BSIT", 
+                    "masters": "MIT", 
+                    "doctorate": "DIT"},
+
+                "trainings":{
+                    "internationalTrainings":"Cybersecurity, networking", 
+                    "localTraining":null},
+
+                "achievements":{
+                    "internationalAchievements":null, 
+                    "localAchievements":null}
+            }
+        },
+
+        {
+            "workInformation": {
+                "organization": "SUNN",
+
+                "department":"CICTE",
+
+                "program":"BSIT & BSIS",
+
+                "subjects":{
+                    "minor":null, 
+                    "major":"IntegrativeProgramming1 & ComputerProgramming1"}
+            }
+        }
+    ]
+}
