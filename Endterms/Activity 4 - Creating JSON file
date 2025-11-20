@@ -1,6 +1,6 @@
 <?php
 // ginagamit  ni to overwrite or to create new sets of data sa json file
-// be carefull ra when running this code, kay basi ma overwrite imo json file which can result to data loss, DATA LOSS!?
+// be carefull ra when running this code, kay basi ma overwrite imo current json file which can result to data loss, DATA LOSS!?
 // it's better nga e run mo ni in a seperate folder and with a fresh json file
 $createData["faculty"]["personalInformation"]["name"]["firstname"] = "Jack";
 $createData["faculty"]["personalInformation"]["name"]["middleInitial"] = "Burik";
