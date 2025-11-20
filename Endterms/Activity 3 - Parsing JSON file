@@ -1,0 +1,8 @@
+<?php 
+$jsonFile = file_get_contents("faculty.json");
+$parsedData = json_decode($jsonFile);
+
+// ginagamit ni for accessing a specific value halin sa json file
+echo $parsedData->faculty[1]->professionalInfornation->trainings->internationalTrainings . "<br>";
+echo $parsedData->faculty[2]->workInformation->subjects->major;
+?>
