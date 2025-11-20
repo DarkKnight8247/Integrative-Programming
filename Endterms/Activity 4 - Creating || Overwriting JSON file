@@ -1,0 +1,10 @@
+<?php
+// ginagamit  ni to overwrite or to create new sets of data sa json file
+$createData["faculty"]["personalInformation"]["name"]["firstname"] = "Jack";
+$createData["faculty"]["personalInformation"]["name"]["middleInitial"] = "Burik";
+$createData["faculty"]["personalInformation"]["name"]["surname"] = "Batumbakal";
+
+file_put_contents("faculty.json", json_encode($createData, JSON_PRETTY_PRINT));
+
+echo "Updated successfully...";
+?>
